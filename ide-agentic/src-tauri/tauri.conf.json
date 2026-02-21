@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "ide-agentic",
+  "productName": "IDE-AI",
   "version": "0.1.0",
-  "identifier": "com.root.ide-agentic",
+  "identifier": "com.teomarques.ide-ai",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -12,13 +12,17 @@
   "app": {
     "windows": [
       {
-        "title": "ide-agentic",
-        "width": 800,
-        "height": 600
+        "title": "IDE-AI — Agente Inteligente",
+        "width": 1280,
+        "height": 800,
+        "resizable": true,
+        "fullscreen": false,
+        "minWidth": 800,
+        "minHeight": 600
       }
     ],
     "security": {
-      "csp": null
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; style-src 'self' 'unsafe-inline'; img-src 'self' asset: https: data: blob:; font-src 'self' data:; connect-src 'self' ipc: http://ipc.localhost https://ipc.localhost asset: http://asset.localhost https://asset.localhost"
     }
   },
   "bundle": {

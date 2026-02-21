@@ -1,116 +1,84 @@
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
-}
+@import "tailwindcss";
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafb);
-}
+/* === Tema Base IDE-AI === */
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  font-family:
+    "JetBrains Mono",
+    "Fira Code",
+    "Cascadia Code",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #cccccc;
+  background-color: #1e1e1e;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
-.container {
+* {
   margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
+/* Scrollbar global — estilo VS Code */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: content-box;
 }
 
-a:hover {
-  color: #535bf2;
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+  background-clip: content-box;
 }
 
-h1 {
-  text-align: center;
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
-input,
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+/* Desabilitar seleção em áreas de UI */
+.select-none {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-button {
-  cursor: pointer;
+/* Monaco Editor overrides */
+.monaco-editor .overflow-guard {
+  border-radius: 0 !important;
 }
 
-button:hover {
-  border-color: #396cd8;
-}
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
+/* Animações suaves */
+* {
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: 0ms;
 }
 
-input,
-button {
-  outline: none;
+.transition-colors {
+  transition-duration: 150ms;
 }
 
-#greet-input {
-  margin-right: 5px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
-  }
-
-  a:hover {
-    color: #24c8db;
-  }
-
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
-  }
-  button:active {
-    background-color: #0f0f0f69;
-  }
+.transition-opacity {
+  transition-duration: 150ms;
 }
